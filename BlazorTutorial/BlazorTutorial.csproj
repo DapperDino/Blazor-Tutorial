@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorTutorial.Core.Web\BlazorTutorial.Core.Web.csproj" />
+    <ProjectReference Include="..\BlazorTutorial.Core\BlazorTutorial.Core.csproj" />
+  </ItemGroup>
+
 </Project>

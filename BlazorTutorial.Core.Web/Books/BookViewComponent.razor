@@ -1,0 +1,14 @@
+﻿@using BlazorTutorial.DAL.Models.Books
+
+@if (Book != null)
+{
+    <h1>@Book.Title</h1>
+
+    <p>@Book.Overview</p>
+    <p>@Book.Price</p>
+}
+
+@code {
+    [Parameter]
+    public Book Book { get; set; }
+}
