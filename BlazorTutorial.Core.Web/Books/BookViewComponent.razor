@@ -1,4 +1,4 @@
-﻿@using BlazorTutorial.DAL.Models.Books
+﻿@namespace BlazorTutorial.Core.Web.Books
 
 @if (Book != null)
 {
@@ -6,9 +6,4 @@
 
     <p>@Book.Overview</p>
     <p>@Book.Price</p>
-}
-
-@code {
-    [Parameter]
-    public Book Book { get; set; }
 }

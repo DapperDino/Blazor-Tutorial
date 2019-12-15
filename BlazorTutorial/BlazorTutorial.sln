@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTutorial", "BlazorTutorial.csproj", "{2513F001-83F4-4A14-B8B6-CD3C8594715D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTutorial.Web", "BlazorTutorial.Web.csproj", "{2513F001-83F4-4A14-B8B6-CD3C8594715D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTutorial.Core.Web", "..\BlazorTutorial.Core.Web\BlazorTutorial.Core.Web.csproj", "{CB0833A9-BE92-4ED7-B278-43FCBEFA5DEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTutorial.Core.Web", "..\BlazorTutorial.Core.Web\BlazorTutorial.Core.Web.csproj", "{CB0833A9-BE92-4ED7-B278-43FCBEFA5DEB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{E0BD2375-7D6D-44CB-9A12-3C01466687D2}"
 EndProject
@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{14CC00E3-E3F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{90C839D9-8E78-4698-BFEF-BC285E885173}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTutorial.DAL", "..\BlazorTutorial.DAL\BlazorTutorial.DAL.csproj", "{C501CF1D-C948-4C5E-A26C-8CA1AFA23361}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTutorial.DAL", "..\BlazorTutorial.DAL\BlazorTutorial.DAL.csproj", "{C501CF1D-C948-4C5E-A26C-8CA1AFA23361}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorTutorial.Core", "..\BlazorTutorial.Core\BlazorTutorial.Core.csproj", "{45F55896-07A0-4E07-AD26-D024A6450BB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTutorial.Core", "..\BlazorTutorial.Core\BlazorTutorial.Core.csproj", "{45F55896-07A0-4E07-AD26-D024A6450BB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

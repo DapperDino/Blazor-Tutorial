@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace BlazorTutorial
+namespace BlazorTutorial.Web
 {
     public class Program
     {
