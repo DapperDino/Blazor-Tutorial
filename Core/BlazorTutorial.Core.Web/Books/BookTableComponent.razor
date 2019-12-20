@@ -1,0 +1,32 @@
+﻿@namespace BlazorTutorial.Core.Web.Books
+
+@if (Books == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (!Books.Any())
+{
+    <p><em>No books found</em></p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Overview</th>
+                <th>Go To</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Overview</td>
+                    <td><a href="/book/@book.Id">View</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
