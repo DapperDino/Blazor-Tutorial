@@ -2,6 +2,7 @@
 using BlazorTutorial.DAL.Models.Books;
 using Microsoft.AspNetCore.Components;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BlazorTutorial.Web.Pages
 {
@@ -17,9 +18,9 @@ namespace BlazorTutorial.Web.Pages
 
         private Book book;
 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            book = BookService.GetBooks().FirstOrDefault(x => x.Id == Id);
+            book = (await BookService.GetAllBooksAsync()).FirstOrDefault(x => x.Id == Id);
 
             if (book == null)
             {

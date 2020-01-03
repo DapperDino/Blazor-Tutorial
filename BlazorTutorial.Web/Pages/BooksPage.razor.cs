@@ -1,6 +1,8 @@
 ﻿using BlazorTutorial.Core.Services.Books;
 using BlazorTutorial.DAL.Models.Books;
 using Microsoft.AspNetCore.Components;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BlazorTutorial.Web.Pages
 {
@@ -9,11 +11,11 @@ namespace BlazorTutorial.Web.Pages
         [Inject]
         public IBookService BookService { get; set; }
 
-        private Book[] books;
+        private List<Book> books;
 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            books = BookService.GetBooks();
+            books = await BookService.GetAllBooksAsync();
         }
     }
 }

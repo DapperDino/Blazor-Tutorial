@@ -7,6 +7,6 @@ namespace BlazorTutorial.Core.Web.Books
     public partial class BookTableComponent : ComponentBase
     {
         [Parameter]
-        public IEnumerable<Book> Books { get; set; }
+        public List<Book> Books { get; set; }
     }
 }

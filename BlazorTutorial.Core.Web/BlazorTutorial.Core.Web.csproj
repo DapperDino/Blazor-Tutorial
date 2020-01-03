@@ -20,7 +20,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DAL\BlazorTutorial.DAL\BlazorTutorial.DAL.csproj" />
+    <ProjectReference Include="..\BlazorTutorial.DAL\BlazorTutorial.DAL.csproj" />
   </ItemGroup>
 
 </Project>
