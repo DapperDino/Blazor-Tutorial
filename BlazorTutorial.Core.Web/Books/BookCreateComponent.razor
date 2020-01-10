@@ -1,0 +1,25 @@
+﻿@namespace BlazorTutorial.Core.Web.Books
+
+@if (book != null)
+{
+    <EditForm Model="book" OnValidSubmit="HandleValidSubmitAsync">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <p>
+            <label for="title">Title</label>
+            <InputText id="title" @bind-Value="book.Title" />
+        </p>
+
+        <p>
+            <label for="overview">Overview</label>
+            <InputText id="overview" @bind-Value="book.Overview" />
+        </p>
+        <p>
+            <label for="price">Price</label>
+            <InputNumber id="price" @bind-Value="book.Price" />
+        </p>
+
+        <input type="submit" value="Create" />
+    </EditForm>
+}

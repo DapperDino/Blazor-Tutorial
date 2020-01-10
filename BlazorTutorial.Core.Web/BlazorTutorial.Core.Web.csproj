@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <UserSecretsId>8c2eadb2-12eb-4f9f-aaeb-ce33853b3719</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\BlazorTutorial.Core\BlazorTutorial.Core.csproj" />
     <ProjectReference Include="..\BlazorTutorial.DAL\BlazorTutorial.DAL.csproj" />
   </ItemGroup>
 

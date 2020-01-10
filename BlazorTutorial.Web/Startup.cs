@@ -24,6 +24,8 @@ namespace BlazorTutorial.Web
             {
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=LibraryContext;Trusted_Connection=True;MultipleActiveResultSets=true",
                     x => x.MigrationsAssembly("BlazorTutorial.DAL.Migrations"));
+
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
 
             services.AddRazorPages();
