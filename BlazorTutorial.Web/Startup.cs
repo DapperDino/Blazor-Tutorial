@@ -1,7 +1,11 @@
 using BlazorTutorial.Core.Services.Books;
 using BlazorTutorial.DAL;
+using BlazorTutorial.DAL.Models;
+using BlazorTutorial.Web.Areas.Identity;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,12 +28,18 @@ namespace BlazorTutorial.Web
             {
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=LibraryContext;Trusted_Connection=True;MultipleActiveResultSets=true",
                     x => x.MigrationsAssembly("BlazorTutorial.DAL.Migrations"));
-
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
 
+            services.AddDefaultIdentity<AppUser>()
+                .AddUserManager<UserManager<AppUser>>()
+                .AddEntityFrameworkStores<LibraryContext>();
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
+
+            services.AddScoped<AuthenticationStateProvider, RevalidatingIdentityAuthenticationStateProvider<AppUser>>();
+
             services.AddScoped<IBookService, BookService>();
         }
 
@@ -50,8 +60,12 @@ namespace BlazorTutorial.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
