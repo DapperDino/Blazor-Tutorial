@@ -2,6 +2,6 @@
 {
     public class Profile : Entity
     {
-
+        public string DisplayName { get; set; } = "New User";
     }
 }

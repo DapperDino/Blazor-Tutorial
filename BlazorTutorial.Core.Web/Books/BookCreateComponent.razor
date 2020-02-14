@@ -1,5 +1,9 @@
 ﻿@namespace BlazorTutorial.Core.Web.Books
 
+@inherits OwningComponentBase
+
+@using BlazorTutorial.Core.Web.Inputs
+
 @if (book != null)
 {
     <EditForm Model="book" OnValidSubmit="HandleValidSubmitAsync">
@@ -10,6 +14,17 @@
             <label for="title">Title</label>
             <InputText id="title" @bind-Value="book.Title" />
         </p>
+
+        @if (profiles != null)
+        {
+            <InputSelectNullableNumber @bind-Value="book.AuthorId">
+                <option value="">Select an author...</option>
+                @foreach (var profile in profiles)
+                {
+                    <option value="@profile.Id">@profile.DisplayName</option>
+                }
+            </InputSelectNullableNumber>
+        }
 
         <p>
             <label for="overview">Overview</label>

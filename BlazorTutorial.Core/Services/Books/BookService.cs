@@ -24,34 +24,39 @@ namespace BlazorTutorial.Core.Services.Books
             _context = context;
         }
 
-        public async Task CreateBookAsync(Book book)
+        public Task CreateBookAsync(Book book)
         {
-            await _context.Books.AddAsync(book).ConfigureAwait(false);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+            _context.Books.Add(book);
+
+            return _context.SaveChangesAsync();
         }
 
-        public async Task DeleteBookAsync(Book book)
+        public Task DeleteBookAsync(Book book)
         {
             _context.Books.Remove(book);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+
+            return _context.SaveChangesAsync();
         }
 
-        public async Task<List<Book>> GetAllBooksAsync()
+        public Task<List<Book>> GetAllBooksAsync()
         {
-            return await _context.Books
-                .ToListAsync().ConfigureAwait(false);
+            return _context.Books
+                .Include(x => x.Author)
+                .ToListAsync();
         }
 
-        public async Task<Book> GetBookByIdAsync(int id)
+        public Task<Book> GetBookByIdAsync(int id)
         {
-            return await _context.Books
+            return _context.Books
+                .Include(x => x.Author)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task UpdateBookAsync(Book book)
+        public Task UpdateBookAsync(Book book)
         {
             _context.Books.Update(book);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+
+            return _context.SaveChangesAsync();
         }
     }
 }

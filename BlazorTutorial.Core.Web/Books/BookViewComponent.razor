@@ -3,6 +3,7 @@
 @if (Book != null)
 {
     <h1>@Book.Title</h1>
+    <h2>@(Book.Author?.DisplayName ?? "Unknown")</h2>
 
     <p>@Book.Overview</p>
     <p>@Book.Price</p>
