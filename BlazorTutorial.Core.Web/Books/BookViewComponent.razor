@@ -1,9 +1,14 @@
-﻿@namespace BlazorTutorial.Core.Web.Books
-
-@if (Book != null)
+﻿@if (Book != null)
 {
     <h1>@Book.Title</h1>
-    <h2>@(Book.Author?.DisplayName ?? "Unknown")</h2>
+    @if (Book.Author != null)
+    {
+        <h2><a href="/profile/@Book.Author.Id">@Book.Author.DisplayName</a></h2>
+    }
+    else
+    {
+        <h2>Unknown</h2>
+    }
 
     <p>@Book.Overview</p>
     <p>@Book.Price</p>

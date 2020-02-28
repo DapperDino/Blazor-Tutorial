@@ -1,4 +1,5 @@
 using BlazorTutorial.Core.Services.Books;
+using BlazorTutorial.Core.Services.Profiles;
 using BlazorTutorial.DAL;
 using BlazorTutorial.DAL.Models;
 using BlazorTutorial.Web.Areas.Identity;

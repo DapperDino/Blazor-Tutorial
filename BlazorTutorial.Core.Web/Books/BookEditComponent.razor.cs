@@ -1,4 +1,5 @@
 ﻿using BlazorTutorial.Core.Services.Books;
+using BlazorTutorial.Core.Services.Profiles;
 using BlazorTutorial.DAL.Models.Books;
 using BlazorTutorial.DAL.Models.Profiles;
 using Microsoft.AspNetCore.Components;

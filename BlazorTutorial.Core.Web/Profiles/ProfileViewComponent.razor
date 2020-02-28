@@ -1,0 +1,15 @@
+﻿@if (Profile != null)
+{
+    <h1>@Profile.DisplayName</h1>
+
+    @if (Profile.Books.Count > 0)
+    {
+        <h2>Books</h2>
+        <ul>
+            @foreach (var book in Profile.Books)
+            {
+                <li><a href="/book/@book.Id">@book.Title</a></li>
+            }
+        </ul>
+    }
+}

@@ -1,6 +1,4 @@
-﻿@namespace BlazorTutorial.Core.Web.Books
-
-@if (Books == null)
+﻿@if (Books == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -25,7 +23,14 @@ else
                 <tr>
                     <td>@book.Title</td>
                     <td>@book.Overview</td>
-                    <td>@(book.Author?.DisplayName ?? "Unknown")</td>
+                    @if (book.Author != null)
+                    {
+                        <td><a href="/profile/@book.Author.Id">@book.Author.DisplayName</a></td>
+                    }
+                    else
+                    {
+                        <td>Unknown</td>
+                    }
                     <td><a href="/book/@book.Id">View</a></td>
                 </tr>
             }

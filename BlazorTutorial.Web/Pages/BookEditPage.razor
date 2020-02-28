@@ -1,5 +1,8 @@
 ﻿@page "/book/edit/{BookId:int}"
 
+@inherits OwningComponentBase<IBookService>
+
 @using BlazorTutorial.Core.Web.Books
+@using BlazorTutorial.Core.Services.Books
 
 <BookEditComponent Book="book"></BookEditComponent>

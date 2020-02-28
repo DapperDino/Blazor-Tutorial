@@ -1,0 +1,8 @@
+﻿@page "/profile/{ProfileId:int}"
+
+@inherits OwningComponentBase<IProfileService>
+
+@using BlazorTutorial.Core.Web.Profiles
+@using BlazorTutorial.Core.Services.Profiles
+
+<ProfileViewComponent Profile="profile"></ProfileViewComponent>

@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace BlazorTutorial.Web.Pages
 {
-    public partial class BooksPage : ComponentBase
+    public partial class BooksPage : OwningComponentBase<IBookService>
     {
-        [Inject]
-        public IBookService BookService { get; set; }
-
         private List<Book> books;
 
         protected override async Task OnInitializedAsync()
         {
-            books = await BookService.GetAllBooksAsync();
+            books = await Service.GetAllBooksAsync();
         }
     }
 }

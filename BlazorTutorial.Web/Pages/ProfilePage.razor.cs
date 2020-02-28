@@ -1,25 +1,25 @@
-﻿using BlazorTutorial.Core.Services.Books;
-using BlazorTutorial.DAL.Models.Books;
+﻿using BlazorTutorial.Core.Services.Profiles;
+using BlazorTutorial.DAL.Models.Profiles;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
 namespace BlazorTutorial.Web.Pages
 {
-    public partial class BookEditPage : OwningComponentBase<IBookService>
+    public partial class ProfilePage : OwningComponentBase<IProfileService>
     {
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
         [Parameter]
-        public int BookId { get; set; }
+        public int ProfileId { get; set; }
 
-        private Book book;
+        private Profile profile;
 
         protected override async Task OnInitializedAsync()
         {
-            book = await Service.GetBookByIdAsync(BookId);
+            profile = await Service.GetProfileAsync(ProfileId);
 
-            if (book == null)
+            if (profile == null)
             {
                 NavigationManager.NavigateTo("/");
                 return;

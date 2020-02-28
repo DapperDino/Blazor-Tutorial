@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace BlazorTutorial.Web.Pages
 {
-    public partial class BookPage : ComponentBase
+    public partial class BookPage : OwningComponentBase<IBookService>
     {
-        [Inject]
-        public IBookService BookService { get; set; }
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
@@ -20,7 +18,7 @@ namespace BlazorTutorial.Web.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            book = await BookService.GetBookByIdAsync(BookId);
+            book = await Service.GetBookByIdAsync(BookId);
 
             if (book == null)
             {
